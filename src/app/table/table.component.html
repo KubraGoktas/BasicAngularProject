@@ -1,0 +1,23 @@
+<p>Table is just a mapping of objects to table rows with <code>ngFor</code></p>
+<div class="table-container">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Ürün</th>
+    <th scope="col">Fiyat</th>
+    <th scope="col">İşlem</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products; index as i">
+    <th scope="row">{{ product.id }}</th>
+    <td>
+      {{ product.name }}
+    </td>
+    <td>{{ product.price }}</td>
+    <!-- <td><button (click)="DeleteProduct(product.id)">Sil</button></td> -->
+  </tr>
+  </tbody>
+</table>
+</div>
