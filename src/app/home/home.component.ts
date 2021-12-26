@@ -3,21 +3,22 @@ import { Component, Input } from "@angular/core";
 
 @Component({
     selector:'app-home',
-    templateUrl:'./home.component.html'
+    templateUrl:'./home.component.html',
+    styleUrls:['./home.component.css']
 })
 
 export class HomeComponent{
    @Input() myList : number[]=[];
    number=0;
 
-  //  addElement(){
+   addElement(){
 
-  //   let lastnumber:number|undefined=this.myList.pop();
-  //   if(lastnumber)
-  //    this.myList.push(lastnumber+1)
-  //    console.log('eklendi', this.myList)
+    let lastnumber:number|undefined=this.myList[this.myList.length-1];
+    if(lastnumber)
+     this.myList.push(lastnumber+1)
+     console.log('eklendi', this.myList)
 
-  //  }
+   }
   increment(){
     this.number=this.number+1
   }
