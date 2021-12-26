@@ -18,13 +18,17 @@ export class TableComponent {
     this.products = this.products.filter(x => x.id !== id)
   }
   AddProduct(productName: string) {
-    let lastIndex=this.products[this.products.length-1].id
-    let newObject = {
-      id: lastIndex? lastIndex+1:1,
-      name: productName,
-      price: 12
+    if (productName.length <= 0) {
+      alert('lütfen bir ürün ismi giriniz')
+    } else {
+      let lastIndex = this.products[this.products.length - 1].id
+      let newObject = {
+        id: lastIndex ? lastIndex + 1 : 1,
+        name: productName,
+        price: 12
+      }
+      this.products.push(newObject)
     }
-    this.products.push(newObject)
   }
 
 }

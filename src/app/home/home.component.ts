@@ -13,7 +13,7 @@ export class HomeComponent{
 
    addElement(){
 
-    let lastnumber:number|undefined=this.myList[this.myList.length-1];
+    let lastnumber=this.myList[this.myList.length-1];
     if(lastnumber)
      this.myList.push(lastnumber+1)
      console.log('eklendi', this.myList)
