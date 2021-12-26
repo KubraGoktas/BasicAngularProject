@@ -7,13 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'y';
-  list : number[] =[1,2,3,4,5,6]
-  addElement(){
-
-    let lastnumber:number|undefined=this.list.pop();
-    if(lastnumber)
-     this.list.push(lastnumber+1)
-     console.log('eklendi', this.list)
-
-   }
+  list: number[] = [1, 2, 3, 4, 5, 6]
+  addElement(addNumber: number) {
+    this.list.push(addNumber)
+    console.log(this.list)
+  }
 }

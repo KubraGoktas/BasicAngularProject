@@ -21,9 +21,9 @@ export class TableComponent {
     if (productName.length <= 0) {
       alert('lütfen bir ürün ismi giriniz')
     } else {
-      let lastIndex = this.products[this.products.length - 1].id
+      let lastIndex = this.products[this.products.length - 1]
       let newObject = {
-        id: lastIndex ? lastIndex + 1 : 1,
+        id: lastIndex ? lastIndex.id + 1 : 1,
         name: productName,
         price: 12
       }

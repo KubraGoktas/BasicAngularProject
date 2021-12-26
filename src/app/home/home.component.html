@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="card-body">
-      <p>{{myList}}</p>
+      <div *ngFor="let item of myList"> {{item}}</div>
       <button (click)="addElement()" >diziye ekle</button>
     </div>
   </div>
