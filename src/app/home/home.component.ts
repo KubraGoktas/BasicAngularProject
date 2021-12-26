@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { NumberService } from "../table/number.service";
 
 
 
@@ -10,16 +11,22 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 export class HomeComponent {
   @Output() addMethod = new EventEmitter<number>()
-  @Input() myList: number[] = [];
+  numberList: number[] = [];
   number = 0;
 
+
+  constructor(nmbrService: NumberService) {
+    this.numberList = nmbrService.list;
+// this.addElement=nmbrService.addElement();
+
+  }
   addElement() {
 
-    var lastnumber: number = this.myList[this.myList.length - 1];
-    if (lastnumber) {
-      this.addMethod.emit(lastnumber + 1);
-      // this.myList.push(lastnumber + 1)
-    }
+    // var lastnumber: number = this.numberList[this.numberList.length - 1];
+    // if (lastnumber) {
+    //   this.addMethod.emit(lastnumber + 1);
+    //   // this.myList.push(lastnumber + 1)
+    // }
   }
   increment() {
     this.number = this.number + 1
