@@ -10,10 +10,10 @@ import { NumberService } from "../table/number.service";
 })
 
 export class HomeComponent implements OnInit {
-  @Output() addMethod = new EventEmitter<number>()
+
   numberList: number[] = [];
   number = 0;
-  private _numberService:NumberService;
+  private _numberService: NumberService;
 
 
   constructor(nmbrService: NumberService) {
@@ -28,11 +28,11 @@ export class HomeComponent implements OnInit {
 
   addElement() {
 
-    // var lastnumber: number = this.numberList[this.numberList.length - 1];
-    // if (lastnumber) {
-    //   this.addMethod.emit(lastnumber + 1);
-    //   // this.myList.push(lastnumber + 1)
-    // }
+    var lastnumber: number = this.numberList[this.numberList.length - 1];
+    if (lastnumber) {
+      this._numberService.addElement(lastnumber + 1)
+      // this.myList.push(lastnumber + 1)
+    }
   }
   increment() {
     this.number = this.number + 1
